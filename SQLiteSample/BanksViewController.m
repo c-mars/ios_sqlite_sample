@@ -21,10 +21,6 @@
     
     _a=[Db db].failedBankInfos;
     self.title=@"Failed Banks";
-    
-//    for(FailedBankInfo* info in _a){
-//        NSLog(@"%@", info.city);
-//    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,7 +40,7 @@
     }
     FailedBankInfo* info=[_a objectAtIndex:indexPath.row];
     cell.textLabel.text=info.name;
-    cell.textLabel.text=info.city;
+    cell.detailTextLabel.text=info.city;
     
     return cell;
 }

@@ -10,8 +10,8 @@
 
 @interface FailedBankInfo : NSObject
 @property (nonatomic, assign) int uniqueId;
-@property (nonatomic, assign) NSString* name;
-@property (nonatomic, assign) NSString* city;
+@property (nonatomic, copy) NSString* name;
+@property (nonatomic, copy) NSString* city;
 
 -(id)initWithUniqueId:(int)uniqueId name:(NSString*)name city:(NSString*)city;
 
