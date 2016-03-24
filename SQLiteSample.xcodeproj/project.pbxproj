@@ -9,10 +9,14 @@
 /* Begin PBXBuildFile section */
 		2AA8693B1CA47290002648BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA8693A1CA47290002648BC /* main.m */; };
 		2AA8693E1CA47290002648BC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA8693D1CA47290002648BC /* AppDelegate.m */; };
-		2AA869411CA47290002648BC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA869401CA47290002648BC /* ViewController.m */; };
+		2AA869411CA47290002648BC /* BanksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA869401CA47290002648BC /* BanksViewController.m */; };
 		2AA869441CA47290002648BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AA869421CA47290002648BC /* Main.storyboard */; };
 		2AA869461CA47290002648BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AA869451CA47290002648BC /* Assets.xcassets */; };
 		2AA869491CA47290002648BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AA869471CA47290002648BC /* LaunchScreen.storyboard */; };
+		2AA869511CA472FB002648BC /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AA869501CA472FB002648BC /* libsqlite3.tbd */; };
+		2AA869571CA47478002648BC /* banklist.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 2AA869561CA47478002648BC /* banklist.sqlite3 */; };
+		2AA8695B1CA477D2002648BC /* FailedBankInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA8695A1CA477D2002648BC /* FailedBankInfo.m */; };
+		2AA8695F1CA47CC0002648BC /* Db.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA8695E1CA47CC0002648BC /* Db.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +24,18 @@
 		2AA8693A1CA47290002648BC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2AA8693C1CA47290002648BC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2AA8693D1CA47290002648BC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2AA8693F1CA47290002648BC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		2AA869401CA47290002648BC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2AA8693F1CA47290002648BC /* BanksViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BanksViewController.h; sourceTree = "<group>"; };
+		2AA869401CA47290002648BC /* BanksViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BanksViewController.m; sourceTree = "<group>"; };
 		2AA869431CA47290002648BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2AA869451CA47290002648BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2AA869481CA47290002648BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2AA8694A1CA47290002648BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2AA869501CA472FB002648BC /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		2AA869561CA47478002648BC /* banklist.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = banklist.sqlite3; sourceTree = "<group>"; };
+		2AA869591CA477D2002648BC /* FailedBankInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FailedBankInfo.h; path = SQLiteSample/FailedBankInfo.h; sourceTree = "<group>"; };
+		2AA8695A1CA477D2002648BC /* FailedBankInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FailedBankInfo.m; path = SQLiteSample/FailedBankInfo.m; sourceTree = "<group>"; };
+		2AA8695D1CA47CC0002648BC /* Db.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Db.h; path = SQLiteSample/Db.h; sourceTree = "<group>"; };
+		2AA8695E1CA47CC0002648BC /* Db.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Db.m; path = SQLiteSample/Db.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AA869511CA472FB002648BC /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +53,10 @@
 		2AA8692D1CA47290002648BC = {
 			isa = PBXGroup;
 			children = (
+				2AA8695C1CA47C68002648BC /* Database */,
+				2AA869581CA477BC002648BC /* Models */,
+				2AA869531CA473AA002648BC /* Resources */,
+				2AA869521CA47393002648BC /* Frameworks */,
 				2AA869381CA47290002648BC /* SQLiteSample */,
 				2AA869371CA47290002648BC /* Products */,
 			);
@@ -60,8 +75,8 @@
 			children = (
 				2AA8693C1CA47290002648BC /* AppDelegate.h */,
 				2AA8693D1CA47290002648BC /* AppDelegate.m */,
-				2AA8693F1CA47290002648BC /* ViewController.h */,
-				2AA869401CA47290002648BC /* ViewController.m */,
+				2AA8693F1CA47290002648BC /* BanksViewController.h */,
+				2AA869401CA47290002648BC /* BanksViewController.m */,
 				2AA869421CA47290002648BC /* Main.storyboard */,
 				2AA869451CA47290002648BC /* Assets.xcassets */,
 				2AA869471CA47290002648BC /* LaunchScreen.storyboard */,
@@ -77,6 +92,40 @@
 				2AA8693A1CA47290002648BC /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2AA869521CA47393002648BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2AA869501CA472FB002648BC /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2AA869531CA473AA002648BC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2AA869561CA47478002648BC /* banklist.sqlite3 */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		2AA869581CA477BC002648BC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2AA869591CA477D2002648BC /* FailedBankInfo.h */,
+				2AA8695A1CA477D2002648BC /* FailedBankInfo.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		2AA8695C1CA47C68002648BC /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				2AA8695D1CA47CC0002648BC /* Db.h */,
+				2AA8695E1CA47CC0002648BC /* Db.m */,
+			);
+			name = Database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +188,7 @@
 				2AA869491CA47290002648BC /* LaunchScreen.storyboard in Resources */,
 				2AA869461CA47290002648BC /* Assets.xcassets in Resources */,
 				2AA869441CA47290002648BC /* Main.storyboard in Resources */,
+				2AA869571CA47478002648BC /* banklist.sqlite3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,9 +199,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AA869411CA47290002648BC /* ViewController.m in Sources */,
+				2AA8695B1CA477D2002648BC /* FailedBankInfo.m in Sources */,
+				2AA869411CA47290002648BC /* BanksViewController.m in Sources */,
 				2AA8693E1CA47290002648BC /* AppDelegate.m in Sources */,
 				2AA8693B1CA47290002648BC /* main.m in Sources */,
+				2AA8695F1CA47CC0002648BC /* Db.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
