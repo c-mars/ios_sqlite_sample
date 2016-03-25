@@ -9,6 +9,7 @@
 #import "BanksViewController.h"
 #import "FailedBankInfo.h"
 #import "Db.h"
+#import "../DetailsViewController.h"
 
 @interface BanksViewController ()
 
@@ -19,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _a=[Db db].failedBankInfos;
+    _a=[Db instance].failedBankInfos;
     self.title=@"Failed Banks";
 }
 
@@ -43,6 +44,25 @@
     cell.detailTextLabel.text=info.city;
     
     return cell;
+}
+
+FailedBankInfo* info;
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    UIAlertController* c=[UIAlertController alertControllerWithTitle:@"Alert" message:[NSString stringWithFormat:@"Clicked %ld", indexPath.row] preferredStyle:UIAlertControllerStyleAlert];
+    [c addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction* a){
+        info = [_a objectAtIndex:indexPath.row];
+        [self performSegueWithIdentifier:@"details" sender:nil];
+    }]];
+    [self presentViewController:c animated:YES completion:nil];
+}
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([[segue identifier] isEqualToString:@"details"]){
+        DetailsViewController* c = [segue destinationViewController];
+        c.name = info.name;
+    }
 }
 
 @end

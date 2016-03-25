@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BanksViewController : UITableViewController
+@interface BanksViewController : UITableViewController<UITableViewDelegate>
 
 @property NSArray* a;
 

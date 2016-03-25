@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import <sqlite3.h>
+#import "Db.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +18,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    [[Db instance] initWithDefaults];
     return YES;
 }
 

@@ -13,11 +13,29 @@
 		2AA869441CA47290002648BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AA869421CA47290002648BC /* Main.storyboard */; };
 		2AA869461CA47290002648BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AA869451CA47290002648BC /* Assets.xcassets */; };
 		2AA869491CA47290002648BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AA869471CA47290002648BC /* LaunchScreen.storyboard */; };
-		2AA869511CA472FB002648BC /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AA869501CA472FB002648BC /* libsqlite3.tbd */; };
 		2AA869571CA47478002648BC /* banklist.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 2AA869561CA47478002648BC /* banklist.sqlite3 */; };
 		2AA8695B1CA477D2002648BC /* FailedBankInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA8695A1CA477D2002648BC /* FailedBankInfo.m */; };
 		2AA8695F1CA47CC0002648BC /* Db.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA8695E1CA47CC0002648BC /* Db.m */; };
+		2AA869631CA49FB8002648BC /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA869621CA49FB8002648BC /* DetailsViewController.m */; };
+		2AA8696D1CA5310A002648BC /* libsqlcipher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AA8696A1CA52F88002648BC /* libsqlcipher.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2AA869691CA52F88002648BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2AA869641CA52F87002648BC /* sqlcipher.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC046055464E500DB518D;
+			remoteInfo = sqlcipher;
+		};
+		2AA8696B1CA530E0002648BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2AA869641CA52F87002648BC /* sqlcipher.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC045055464E500DB518D;
+			remoteInfo = sqlcipher;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2AA869361CA47290002648BC /* SQLiteSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SQLiteSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +54,9 @@
 		2AA8695A1CA477D2002648BC /* FailedBankInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FailedBankInfo.m; path = SQLiteSample/FailedBankInfo.m; sourceTree = "<group>"; };
 		2AA8695D1CA47CC0002648BC /* Db.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Db.h; path = SQLiteSample/Db.h; sourceTree = "<group>"; };
 		2AA8695E1CA47CC0002648BC /* Db.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Db.m; path = SQLiteSample/Db.m; sourceTree = "<group>"; };
+		2AA869611CA49FB8002648BC /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		2AA869621CA49FB8002648BC /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		2AA869641CA52F87002648BC /* sqlcipher.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = sqlcipher.xcodeproj; path = sqlcipher/sqlcipher.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,7 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AA869511CA472FB002648BC /* libsqlite3.tbd in Frameworks */,
+				2AA8696D1CA5310A002648BC /* libsqlcipher.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +74,8 @@
 		2AA8692D1CA47290002648BC = {
 			isa = PBXGroup;
 			children = (
+				2AA869641CA52F87002648BC /* sqlcipher.xcodeproj */,
+				2AA869601CA49F96002648BC /* Views */,
 				2AA8695C1CA47C68002648BC /* Database */,
 				2AA869581CA477BC002648BC /* Models */,
 				2AA869531CA473AA002648BC /* Resources */,
@@ -128,6 +151,23 @@
 			name = Database;
 			sourceTree = "<group>";
 		};
+		2AA869601CA49F96002648BC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2AA869611CA49FB8002648BC /* DetailsViewController.h */,
+				2AA869621CA49FB8002648BC /* DetailsViewController.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		2AA869651CA52F87002648BC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2AA8696A1CA52F88002648BC /* libsqlcipher.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -142,6 +182,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				2AA8696C1CA530E0002648BC /* PBXTargetDependency */,
 			);
 			name = SQLiteSample;
 			productName = SQLiteSample;
@@ -173,12 +214,28 @@
 			mainGroup = 2AA8692D1CA47290002648BC;
 			productRefGroup = 2AA869371CA47290002648BC /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 2AA869651CA52F87002648BC /* Products */;
+					ProjectRef = 2AA869641CA52F87002648BC /* sqlcipher.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				2AA869351CA47290002648BC /* SQLiteSample */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		2AA8696A1CA52F88002648BC /* libsqlcipher.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libsqlcipher.a;
+			remoteRef = 2AA869691CA52F88002648BC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		2AA869341CA47290002648BC /* Resources */ = {
@@ -202,12 +259,21 @@
 				2AA8695B1CA477D2002648BC /* FailedBankInfo.m in Sources */,
 				2AA869411CA47290002648BC /* BanksViewController.m in Sources */,
 				2AA8693E1CA47290002648BC /* AppDelegate.m in Sources */,
+				2AA869631CA49FB8002648BC /* DetailsViewController.m in Sources */,
 				2AA8693B1CA47290002648BC /* main.m in Sources */,
 				2AA8695F1CA47CC0002648BC /* Db.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2AA8696C1CA530E0002648BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = sqlcipher;
+			targetProxy = 2AA8696B1CA530E0002648BC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2AA869421CA47290002648BC /* Main.storyboard */ = {
@@ -317,8 +383,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = ./sqlcipher/src;
 				INFOPLIST_FILE = SQLiteSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = "-DSQLITE_HAS_CODEC";
 				PRODUCT_BUNDLE_IDENTIFIER = cmars.SQLiteSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -328,8 +396,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = ./sqlcipher/src;
 				INFOPLIST_FILE = SQLiteSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = "-DSQLITE_HAS_CODEC";
 				PRODUCT_BUNDLE_IDENTIFIER = cmars.SQLiteSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -354,6 +424,7 @@
 				2AA8694F1CA47290002648BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

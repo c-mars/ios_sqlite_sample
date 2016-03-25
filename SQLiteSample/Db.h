@@ -13,7 +13,8 @@
     sqlite3* _db;
 }
 
-+(Db*)db;
++(Db*)instance;
 -(NSArray*)failedBankInfos;
+-(void)initWithDefaults;
 
 @end

@@ -28,10 +28,46 @@
                             <outlet property="delegate" destination="xev-ln-a63" id="D42-nO-4Oa"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="RdE-jV-cFC" kind="show" identifier="details" id="BAp-l7-vKZ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SXH-ga-0L7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="343" y="698"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="Yke-Go-3lb">
+            <objects>
+                <viewController id="RdE-jV-cFC" customClass="DetailsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Lzf-wu-plx"/>
+                        <viewControllerLayoutGuide type="bottom" id="trJ-mL-H51"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ecP-cj-JuL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bff-NR-xB9">
+                                <rect key="frame" x="279" y="308" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Bff-NR-xB9" firstAttribute="centerY" secondItem="ecP-cj-JuL" secondAttribute="centerY" id="FFI-JN-eIY"/>
+                            <constraint firstItem="Bff-NR-xB9" firstAttribute="centerX" secondItem="ecP-cj-JuL" secondAttribute="centerX" id="Zef-ce-W6l"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="Bff-NR-xB9" id="dPF-kV-FpM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1XW-Jg-wh9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1950" y="698"/>
         </scene>
     </scenes>
 </document>
