@@ -24,7 +24,6 @@ static Db* _instance;
         // Set up a SQLCipher database connection:
         
         if (sqlite3_open([self.databasePath UTF8String], &_db) == SQLITE_OK) {
-//            const char* key = [@"StrongPassword" UTF8String];
             
             sqlite3_key(_db, "test123", 7);
             
@@ -33,6 +32,8 @@ static Db* _instance;
             } else {
                 NSLog(@"Incorrect password!");
             }
+            
+            [self initWithDefaults];
         }
     }
     return self;
@@ -64,7 +65,6 @@ static Db* _instance;
 }
 
 -(void)initWithDefaults{
-    if(sqlite3_open([[self databasePath] UTF8String], &_db) == SQLITE_OK) {
         static sqlite3_stmt *compiledStatement;
         
         sqlite3_exec(_db, "drop table if exists 'failed_banks'", NULL, NULL, NULL);
@@ -75,7 +75,6 @@ static Db* _instance;
         [self insert:@"MoneyBox" city:@"San Andreas"];
         
         sqlite3_finalize(compiledStatement);
-    }
 }
 
 -(void)insert:(NSString*)name city:(NSString*)city {
@@ -93,24 +92,29 @@ static Db* _instance;
     NSFileManager *fileManager = [NSFileManager defaultManager];
     success = [fileManager fileExistsAtPath:databasePath];
     if(!success) {
-//        NSString *databasePathFromApp = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:databaseName];
-//        [fileManager copyItemAtPath:databasePathFromApp toPath:databasePath error:nil];
         [[NSFileManager defaultManager] createFileAtPath:databasePath
-                                                contents:nil //[NSData dataWithContentsOfFile:sqlPath]
+                                                contents:nil
                                               attributes:nil];
     }
     
     return  databasePath;
 }
-//
-//- (BOOL)databaseExists {
-//    BOOL exists = NO;
-//    NSError *error = nil;
-//    exists = [[NSURL URLWithString:[self databasePath]] checkResourceIsReachableAndReturnError:&error];
-//    if (exists == NO && error != nil) {
-//        NSLog(@"Error checking availability of database file: %@", error);
-//    }
-//    return exists;
-//}
+
+- (NSURL *)databaseURL {
+    NSArray *URLs = [[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask];
+    NSURL *directoryURL = [URLs firstObject];
+    NSURL *databaseURL = [directoryURL URLByAppendingPathComponent:@"secure.db"];
+    return  databaseURL;
+}
+
+- (BOOL)databaseExists {
+    BOOL exists = NO;
+    NSError *error = nil;
+    exists = [[self databaseURL] checkResourceIsReachableAndReturnError:&error];
+    if (exists == NO && error != nil) {
+        NSLog(@"Error checking availability of database file: %@", error);
+    }
+    return exists;
+}
 
 @end
